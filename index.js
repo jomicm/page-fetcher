@@ -34,6 +34,8 @@ request(args[0], (err, response, body) => {
 const saveHTML = (path, content) => {
   fs.writeFile(path, content, err => {
     if (err) return console.log(err);
-    console.log("The file was saved!");
+    const stats = fs.statSync(path);
+    const fileSizeInBytes = stats.size;
+    console.log(`Downloaded and saved ${fileSizeInBytes} bytes to ${path}`);
   });
 };

@@ -4,7 +4,6 @@ const readline = require('readline');
 
 const args = process.argv.splice(2);
 if (args.length !== 2) return;
-
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
